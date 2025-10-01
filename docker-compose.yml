@@ -1,0 +1,35 @@
+services:
+  nodejs-debugger:
+    build: .
+    container_name: nodejs-debugger-container
+    ports:
+      - "3069:3000"    # TCP RPC port
+      - "9269:9229"    # Node.js debugger port
+      - "3001:3001"    # Real debugger service port
+    volumes:
+      - ./example-project:/workspace/example-project
+      - nvim_logs:/tmp/nvim
+      - debugger_temp:/tmp/debugger
+    environment:
+      - NODE_ENV=development
+      - DEBUG=*
+      - NVIM_LOG_LEVEL=DEBUG
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "3000"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    stdin_open: true
+    tty: true
+    networks:
+      - debugger-network
+
+volumes:
+  nvim_logs:
+  debugger_temp:
+
+networks:
+  debugger-network:
+    driver: bridge

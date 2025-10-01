@@ -1,0 +1,9 @@
+enable                     # Enable debugger
+setBreakpoint /workspace/example-project/index.js 29
+resume
+stepOver
+stepIn
+stepOut
+scope                       # See variables in current paused frame
+removeBreakpoint <id>
+exit
