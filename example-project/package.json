@@ -1,21 +1,30 @@
 {
   "name": "debug-demo-project",
   "version": "1.0.0",
-  "description": "Example Node.js project for debugging with Neovim DAP",
-  "main": "index.js",
+  "description": "Example Node.js project for debugging with CDP Debugger",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
-    "debug": "node --inspect-brk=0.0.0.0:9229 index.js",
+    "start": "node server.js",
+    "debug": "node --inspect-brk=0.0.0.0:9269 server.js",
+    "dev": "nodemon server.js",
     "test": "node test.js"
   },
-  "keywords": ["debug", "nodejs", "dap", "neovim"],
+  "keywords": [
+    "debug",
+    "nodejs",
+    "cdp",
+    "debugger"
+  ],
   "author": "Debug Environment",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2",
-    "lodash": "^4.17.21"
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "helmet": "^7.2.0",
+    "morgan": "^1.10.1",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
-    "@types/node": "^20.0.0"
+    "nodemon": "^3.1.10"
   }
 }

@@ -1,0 +1,52 @@
+{
+  "name": "ai-debugging-agent",
+  "version": "1.0.0",
+  "description": "AI-powered debugging agent using LangGraph and Groq",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch index.ts",
+    "debug": "tsx index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "debugging",
+    "ai",
+    "langgraph",
+    "groq",
+    "cdp",
+    "nodejs",
+    "automation"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@langchain/langgraph": "^0.0.22",
+    "chrome-remote-interface": "^0.32.2",
+    "dotenv": "^16.3.1",
+    "groq-sdk": "^0.5.0",
+    "node-fetch": "^3.3.2",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "@vitest/coverage-v8": "^1.1.0",
+    "tsx": "^4.6.2",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/ai-debugging-agent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/ai-debugging-agent/issues"
+  },
+  "homepage": "https://github.com/your-username/ai-debugging-agent#readme"
+}
